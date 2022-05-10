@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f86255a-3386-4689-b02d-f399fe056b40" name="Changes" comment="add files" />
+    <list default="true" id="3f86255a-3386-4689-b02d-f399fe056b40" name="Changes" comment="delete workflow test yaml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +69,21 @@
       <option name="project" value="LOCAL" />
       <updated>1652204046325</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="pull request">
+      <created>1652205455717</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1652205455717</updated>
+    </task>
+    <task id="LOCAL-00005" summary="delete workflow test yaml">
+      <created>1652205708868</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1652205708868</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -85,6 +99,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add files" />
-    <option name="LAST_COMMIT_MESSAGE" value="add files" />
+    <MESSAGE value="pull request" />
+    <MESSAGE value="delete workflow test yaml" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete workflow test yaml" />
   </component>
 </project>
