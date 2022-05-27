@@ -3,16 +3,33 @@
 
 from faker import Faker
 
-def fake_data():
-    faker = Faker()
-    name = faker.name()
-    age = faker.random_int(18, 65)
-    height = faker.random_int(150, 200)
-    weight = faker.random_int(45, 120)
-    return name, age, height, weight
+class Person:
+    def __init__(self, name, age, height, weight):
+        self.name = name
+        self.age = age
+        self.height = height
+        self.weight = weight
 
-def create_list():
-    for i in range(10):
-        print(fake_data())
+    @staticmethod
+    def create_somebody():
+        faker = Faker()
+        name = faker.name()
+        age = faker.random_int(18, 65)
+        height = faker.random_int(150, 200)
+        weight = faker.random_int(45, 120)
+        return Person(name, age, height, weight)
 
-print(create_list())
+class ListCreator:
+    @staticmethod
+    def create_list():
+        list_people = []
+        for i in range(10):
+            new_people = Person.create_somebody()
+            list_people.append(new_people)
+        return list_people
+
+
+sorted_list = ListCreator.create_list()
+sorted_list.sort(key=lambda x: x.age)
+for i in sorted_list:
+    print(i)
