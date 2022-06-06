@@ -30,11 +30,8 @@ jobs:
         run: echo Hello, world!
       - name: Install black
         run: pip install black
-      - name: Install flake8
-        run: pip install flake8
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
           black
-          flake8
