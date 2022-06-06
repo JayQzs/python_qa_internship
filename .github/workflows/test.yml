@@ -35,3 +35,4 @@ jobs:
       - name: Run a multi-line script
         run: |
           black
+          chmod +x ./test.sh && ./test.sh
