@@ -30,8 +30,8 @@ jobs:
         run: pip install flake8
       - name: Run checks
         run: | 
-          flake8
           black
+          flake8
           chmod +x ./test.sh && ./test.sh
 
       # Runs a single command using the runners shell
