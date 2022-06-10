@@ -28,7 +28,7 @@ jobs:
         run: pip install black
       - name: Run black
         run: | 
-          black
+          black .
           chmod +x ./test.sh && ./test.sh
 
       # Runs a single command using the runners shell
