@@ -1,4 +1,10 @@
 name: Postman tests
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
       - name: Run tests
         run: |
           newman run hometask/8/PythonQA.json -g hometask/8/globals.json
