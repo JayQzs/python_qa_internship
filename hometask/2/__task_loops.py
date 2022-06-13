@@ -35,7 +35,7 @@ for num in numbers:
         my_list.append('five even')
     elif num % 2 == 1:
         my_list.append('odd')
-    else num % 2 == 0:
+    elif num % 2 == 0:
         my_list.append('even')
         
 assert my_list == ['odd', 'odd', 'even', 'even', 'odd', 'five even', 'five even', 'five odd']
