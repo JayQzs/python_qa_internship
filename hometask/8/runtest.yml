@@ -1,0 +1,1 @@
+newman run hometask/8/PythonQA.json -g hometask/8/globals.json
