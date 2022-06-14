@@ -36,6 +36,6 @@ jobs:
           echo test, and deploy your project.
 
 
-      - name: Run tests
+      - name: Run Postman collection tests
         run: |
-          newman run hometask/8/PythonQA.json -g hometask/8/globals.json
+          newman run hometask/8/Postman_tests.json -g hometask/8/globals.json

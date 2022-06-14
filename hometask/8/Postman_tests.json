@@ -1,13 +1,13 @@
 {
 	"info": {
 		"_postman_id": "8dfcdfbf-7400-40b5-a6b6-3cc512d1115f",
-		"name": "Python QA",
+		"name": "Postman tests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "20907943"
 	},
 	"item": [
 		{
-			"name": "Python tests",
+			"name": "Tests",
 			"item": [
 				{
 					"name": "Create User",
@@ -94,6 +94,14 @@
 								"exec": [
 									"pm.test(\"User was found\", function () {\r",
 									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"User's status is active\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.status).to.eql(\"active\");\r",
+									"});\r",
+									"pm.test(\"User is a man\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.gender).to.eql(\"male\");\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -183,6 +191,77 @@
 							"mode": "raw",
 							"raw": "{\r\n    \"name\": \"Vasya\"\r\n}"
 						},
+						"url": {
+							"raw": "https://gorest.co.in/public/v2/users/{{UserID}}?gender=female&name=Vasya",
+							"protocol": "https",
+							"host": [
+								"gorest",
+								"co",
+								"in"
+							],
+							"path": [
+								"public",
+								"v2",
+								"users",
+								"{{UserID}}"
+							],
+							"query": [
+								{
+									"key": "gender",
+									"value": "female"
+								},
+								{
+									"key": "name",
+									"value": "Vasya"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checking updated data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"User's name changed\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.name).to.eql(\"Vasya\");\r",
+									"});\r",
+									"pm.test(\"User's gender changed\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.gender).to.eql(\"female\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "tokenType",
+									"value": "",
+									"type": "string"
+								},
+								{
+									"key": "accessToken",
+									"value": "18d9b2f39a546090ec67010cccf156db727de43a3d090e35dde0d7cfb42272e9",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
 						"url": {
 							"raw": "https://gorest.co.in/public/v2/users/{{UserID}}",
 							"protocol": "https",
