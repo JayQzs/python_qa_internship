@@ -41,3 +41,8 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+
+      - name: Run Postman collection tests
+        run: |
+          newman run hometask/8/Postman_tests.json -g hometask/8/globals.json
