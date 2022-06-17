@@ -1,7 +1,6 @@
 import contact_list_functions
 import sys
 
-
 def main():
     while True:
         choise = int(
@@ -27,3 +26,5 @@ def main():
 
 
 main()
+
+
